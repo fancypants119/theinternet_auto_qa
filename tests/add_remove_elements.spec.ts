@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const addremove = test.extend({
   addremovePage : async ({ page }, use) => {
     await page.goto('https://the-internet.herokuapp.com/');
-    await page.waitForLoadState('networkidle')
+
     await expect(page.getByRole('heading', { name: 'Welcome to the-internet' })).toBeVisible()
     await page.getByRole('link', { name: 'Add/Remove Elements' }).click()
     await expect(page.getByRole('heading', { name: 'Add/Remove Elements' })).toBeVisible()

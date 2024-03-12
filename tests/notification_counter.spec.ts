@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 const notify = test.extend({
   notifyPage : async ({ page }, use) => {
     await page.goto("https://the-internet.herokuapp.com/");
-    await page.waitForLoadState('networkidle')
+  
     await page.getByRole('link', { name: 'Notification Messages' }).click()
     await expect(page.getByRole('heading', { name: 'Notification Message' })).toBeVisible()
     await use(page);

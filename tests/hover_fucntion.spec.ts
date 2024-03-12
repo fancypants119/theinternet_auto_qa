@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const hover = test.extend({
   hoverPage : async ({ page }, use) => {
     await page.goto("https://the-internet.herokuapp.com/");
-    await page.waitForLoadState('networkidle')
+
     await page.getByRole('link', { name: 'Hovers' }).click()
     await expect(page.getByRole('heading', { name: 'Hovers' })).toBeVisible()
     await use(page);

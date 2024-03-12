@@ -7,7 +7,7 @@ import { test, expect, } from '@playwright/test';
 const draganddrop = test.extend({
   draganddropPage : async ({ page }, use) => {
     await page.goto('https://the-internet.herokuapp.com/');
-    await page.waitForLoadState('networkidle')
+
     await expect(page.getByRole('heading', { name: 'Welcome to the-internet' })).toBeVisible()
     await page.getByRole('link', { name: 'Drag and Drop' }).click()
     await expect(page.getByRole('heading', { name: 'Drag and Drop' })).toBeVisible()

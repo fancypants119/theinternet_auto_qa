@@ -13,4 +13,10 @@
 THINGS TO NOTE :
 - I have disabled "headed" mode from the config file
 - The tests run on all three browsers [chromium,firefox,webkit]
--   
+- All cases that have a screenshot enabled for test passes can be found in the "test_ss" folder
+- All fail cases will have screenshot and can be viewed in the "test-results" folder or the playwright report.
+
+-   2 failed
+    [webkit] › drag_and_drop.spec.ts:24:1 › Dragging A to B ────────────────────────────────────────
+    [webkit] › drag_and_drop.spec.ts:33:1 › Dragging B to A 
+The above to cases will always fail on webkit as its a bug that requires development work.
