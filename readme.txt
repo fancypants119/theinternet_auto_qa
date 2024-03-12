@@ -7,7 +7,7 @@
 	3.2 : npx playwright test --workers=1 - run all the tests in the project in headless mode, one test after the other [not like the above test run]
 	3.3 : npx playwright test --headed - To run your tests in headed mode
 
-4. View test results, reports and SSs by running : npx playwright show-report
+4. View test results, logs, reports and SSs by running : npx playwright show-report
 
 
 THINGS TO NOTE :
