@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 const login = test.extend({
   loginPage : async ({ page }, use) => {
     await page.goto("https://the-internet.herokuapp.com/");
+    await page.waitForLoadState('networkidle')
     await page.getByRole('link', { name: 'Form Authentication' }).click()
     await expect(page.getByRole('heading', { name: 'Login Page' })).toBeVisible()
     await use(page);
