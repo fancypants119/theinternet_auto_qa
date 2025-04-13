@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import {test, expect} from "./fixtures/set_up"
 
 const hover = test.extend({
   hoverPage : async ({ page }, use) => {
@@ -49,10 +49,11 @@ hover(`Validate elements appeared through hover are interactive ${data.elementnu
 })
 
 
-hover('Invalid Hover', async ({ hoverPage }) => {
-  await hoverPage.getByText('Hover over the image for').hover();
-  await expect(hoverPage.getByRole('heading', { name: 'name: user1' })).toBeHidden()
-  await expect(hoverPage.getByRole('link', { name: 'View profile' })).toBeHidden()
+test('Invalid Hover', async ({ welcomePage, page }) => {
+  await welcomePage.goToTest("Hovers")
+  await page.getByText('Hover over the image for').hover();
+  await expect(page.getByRole('heading', { name: 'name: user1' })).toBeHidden()
+  await expect(page.getByRole('link', { name: 'View profile' })).toBeHidden()
 
 });
 
